@@ -54,31 +54,6 @@
 	</form>
     ```
     
-    *list.html*
-    ```
-    <table border = 1>
-      <thead>
-        <td>Name</td>
-        <td>Calories</td>
-        <td>Cuisine</td>
-        <td>Vegetarian</td>
-        <td>Gluten Free</td>
-      </thead>
-
-      {% for row in rows %}
-      <tr>
-        <td>{{row["name"]}}</td>
-        <td>{{row["calories"]}}</td>
-        <td>{{row['cuisine']}}</td>
-        <td>{{row['is_vegetarian']}}</td>
-        <td>{{row['is_gluten_free']}}</td>
-      </tr>
-      {% endfor %}
-	</table>
-
-	<a href = "/">Home</a>
-	```
-    
     *result.html*
     ```
     <h1>result of addition : {{ message }}</h1>
