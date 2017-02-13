@@ -1,28 +1,22 @@
-<!doctype html>
-<html>
-  <body>
+<img src="https://lambdaschool.com/static/assets/images/lambda.png">
+<table border = 1>
+  <thead>
+    <td>Name</td>
+    <td>Calories</td>
+    <td>Cuisine</td>
+    <td>Vegetarian</td>
+    <td>Gluten Free</td>
+  </thead>
 
-    <table border = 1>
-      <thead>
-        <td>Name</td>
-        <td>Calories</td>
-        <td>Cuisine</td>
-        <td>Vegetarian</td>
-        <td>Gluten Free</td>
-      </thead>
+  {% for row in rows %}
+  <tr>
+    <td>{{row["name"]}}</td>
+    <td>{{row["calories"]}}</td>
+    <td>{{row['cuisine']}}</td>
+    <td>{{row['is_vegetarian']}}</td>
+    <td>{{row['is_gluten_free']}}</td>
+  </tr>
+  {% endfor %}
+</table>
 
-      {% for row in rows %}
-      <tr>
-        <td>{{row["name"]}}</td>
-        <td>{{row["calories"]}}</td>
-        <td>{{row['cuisine']}}</td>
-        <td>{{row['is_vegetarian']}}</td>
-        <td>{{row['is_gluten_free']}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-
-    <a href = "/">Go back to home page</a>
-
-  </body>
-</html>
+<a href = "/">Home</a>

@@ -12,9 +12,12 @@ def new_food():
        return render_template('food.html')
 
 @app.route('/addfood', methods = ['POST'])
-def addrecord():
+def addfood():
+    #initialize the connection and cursor
     connection = sqlite3.connect('database.db')
     cursor = connection.cursor()
+
+    #prep the values that will be inserted
     name = request.form['name']
     calories = request.form['calories']
     cuisine = request.form['cuisine']
@@ -22,6 +25,7 @@ def addrecord():
     isGlutenFree = request.form['is_gluten_free']
 
     try:
+        #insert the new food item
         cursor.execute('INSERT INTO foods(name, calories, cuisine, is_vegetarian, is_gluten_free) VALUES (?, ?, ?, ?, ?)', (name, calories, cuisine, isVegetarian, isGlutenFree))
         connection.commit()
         message = 'Record successfully added'
@@ -29,6 +33,7 @@ def addrecord():
         message = 'Error on insert operation'
         conection.rollback()
     finally:
+        #display the insert result
         return render_template('result.html', message = message)
         connection.close()
 
@@ -58,8 +63,8 @@ def favorite():
 def search():
     name = request.args.get('name')
     dbQuery = 'SELECT * FROM foods WHERE name = "' + name + '"'
-    print '>>>>>>>>' + dbQuery
     connection = sqlite3.connect('database.db')
+
     cursor = connection.cursor()
     cursor.execute(dbQuery)
 
@@ -76,7 +81,6 @@ def drop():
     connection.commit()
     connection.close()
     return 'dropped'
-
 
 
 if __name__ == '__main__':

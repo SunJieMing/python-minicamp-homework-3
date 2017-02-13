@@ -1,25 +1,16 @@
-<html>
-  <body>
+<img src="https://lambdaschool.com/static/assets/images/lambda.png">
+<form action = "{{ url_for('addfood') }}" method = "POST">
+  <h3>Food Info</h3>
+  Name<br>
+  <input type = "text" name = "name" /></br>
+  Calories<br>
+  <textarea name = "calories" ></textarea><br>
+  Cuisine<br>
+  <input type = "text" name = "cuisine" /><br>
+  Vegetarian<br>
+  <input type = "text" name = "is_vegetarian" /><br>
+  Gluten Free<br>
+  <input type = "text" name = "is_gluten_free" /><br>
+  <input type = "submit" value = "submit" /><br>
+</form>
 
-    <form action = "{{ url_for('addrecord') }}" method = "POST">
-      <h3>Food Info</h3>
-      Name<br>
-      <input type = "text" name = "name" /></br>
-
-      Calories<br>
-      <textarea name = "calories" ></textarea><br>
-
-      Cuisine<br>
-      <input type = "text" name = "cuisine" /><br>
-
-      Vegetarian<br>
-      <input type = "text" name = "is_vegetarian" /><br>
-
-      Gluten Free<br>
-      <input type = "text" name = "is_gluten_free" /><br>
-
-      <input type = "submit" value = "submit" /><br>
-    </form>
-
-  </body>
-</html>
