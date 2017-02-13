@@ -2,9 +2,9 @@
 
 ## Instructions
 ---
-0. Create a project folder.  Setup your virtual environment.  Install `flask`.
+1. Create a project folder.  Setup your virtual environment.  Install `flask`.
 
-1. Create a `/templates` folder in your project directory with the following `html` templates.
+2. Create a `/templates` folder in your project directory with the following `html` templates.
 	
     *home.html*
     ```
@@ -86,45 +86,45 @@
 	<h2><a href = "/list">See Food List</a></h2>
     ```
 
-2. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.
+3. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.  After running this script a file called `database.db` is created.  This is your `SQLite3` database.  `SQLite3` reads and writes to a single static file without needing a separate database server running locally.
 
 	*initdb.py*
     ```
     import sqlite3
 
     connection = sqlite3.connect('database.db')
-    print "Opened database successfully";
+    print 'Opened database successfully';
 
     connection.execute('CREATE TABLE foods (name TEXT, calories TEXT, cuisine TEXT, is_vegetarian TEXT, is_gluten_free TEXT)')
-    print "Table created successfully";
+    print 'Table created successfully';
     
     connection.close()
 	```
 
-	***Example***: A GET request to `localhost:5000/birthday` returns `'October 30 1911'` (Use your birthday instead)
+4. Create your server file, import the needed dependencies, and create the home route (`/`).  This route should render the `home.html` template.  Start your server and go to `localhost:5000/`.
 
-
-3. Build a route called `/greeting` that accepts a parameter called `name`.  The route should return a string
-that says `'Hello <name>'` where `<name>` is the name that you passed to the route.  
-
-	***Example***: A GET request to `localhost:5000/greeting/ben` would return 'Hello ben!'
-    
-4. Modify your home route (`/`) to return the html template provided below.
-	* Create a folder called `templates` in the root of your project's directory.
-	* Create a file called `home.html` in the templates directory.
-	* Paste the HTML shown below into `home.html` and save.
-	* In your main server file modify the `flask` import line to say: `from flask import Flask, render_template`
-	* In your home (`/`) route `return render_template('home.html')`.
-	* Navigate to `localhost:5000/` and you should see the rendered HTML.
-	
-Your file structure should look like this:
+Your file structure should now look like this:
 ```
  project-name/
  --server.py (or whatever you named your python script)
+ --initdb.py
+ --database.db
  --templates/
  ---- home.html
+ ---- food.html
+ ---- list.html
+ ---- result.html
  --venv/
 ```
+    
+5. Implement the `/enternew` route.  This route should simply render `food.html`.
+
+
+6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.
+	
+
+7. Implement
+
     
 Paste this HTML into `home.html`.
 
