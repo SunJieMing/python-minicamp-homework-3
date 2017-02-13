@@ -28,7 +28,6 @@ def addrecord():
     except:
         message = 'Error on insert operation'
         conection.rollback()
-
     finally:
         return render_template('result.html', message = message)
         connection.close()
