@@ -121,23 +121,9 @@
 6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.
 
 
-7. Implement the '/list' route.  
+7. Implement the `/list` route.  `SELECT` everything from the `foods` table and return it to the client.  Make sure you set `connection.row_factory` to `sqlite3.Row`.  Make sure that you pass the data to the template when rendering ( `return render_template('list.html', rows = rows)` ).  Use the lecture code as a reference.
 
-    
-Paste this HTML into `home.html`.
 
-```
-<!DOCTYPE html>
-<html>
-  <body>
-    <img src="https://lambdaschool.com/static/assets/images/lambda.png">
-    <h1>Congrats!</h1>
-    <h3>You just served your first webpage.</h3>
-    <p>This page is pretty bare right now but these are the fundamentals that all websites are built on.  Later in the course we will teach you some basic HTML, CSS, and Javascript so that you can structure more sophisticated pages with more detailed designs and complex functionality</p>
-    <p>Our full time and part time courses will go much more in depth as to what it takes to build the same kinds of web applications that you know and love.  We will be covering the cutting edge frameworks used by industry leaders to create highly performant and beautiful applications.</p>
-  </body>
-</html>
-```
 ---
 
 ### Extra Credit
