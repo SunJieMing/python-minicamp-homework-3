@@ -4,8 +4,9 @@
 ---
 0. Create a project folder.  Setup your virtual environment.  Install `flask`.
 
-1. Create a `/templates` folder in your project directory with the following `html` templates.\
-	*home.html*
+1. Create a `/templates` folder in your project directory with the following `html` templates.
+	
+    *home.html*
     ```
     <!DOCTYPE html>
     <img src="https://lambdaschool.com/static/assets/images/lambda.png">
@@ -85,7 +86,8 @@
 	<h2><a href = "/list">See Food List</a></h2>
     ```
 
-2. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.\
+2. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.
+
 	*initdb.py*
     ```
     import sqlite3
