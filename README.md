@@ -2,8 +2,9 @@
 
 ## Instructions
 ---
+0. Create a project folder.  Setup your virtual environment.  Install `flask`.
 
-1. Create a `/templates` folder with the following `html` templates.\
+1. Create a `/templates` folder in your project directory with the following `html` templates.\
 	*home.html*
     ```
     <!DOCTYPE html>
@@ -84,7 +85,19 @@
 	<h2><a href = "/list">See Food List</a></h2>
     ```
 
-2. Build a route called `/birthday` that returns your birthday as a `string` in this format: `'October 30 1911'`.
+2. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.\
+	*initdb.py*
+    ```
+    import sqlite3
+
+    connection = sqlite3.connect('database.db')
+    print "Opened database successfully";
+
+    connection.execute('CREATE TABLE foods (name TEXT, calories TEXT, cuisine TEXT, is_vegetarian TEXT, is_gluten_free TEXT)')
+    print "Table created successfully";
+    
+    connection.close()
+	```
 
 	***Example***: A GET request to `localhost:5000/birthday` returns `'October 30 1911'` (Use your birthday instead)
 
