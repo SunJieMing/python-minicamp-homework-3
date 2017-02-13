@@ -16,7 +16,6 @@
         <input type="submit" />
     </form>
     <h3><a href="/enternew">Add Food</a></h3>
-    <h3><a href="/list">Show Foods</a></h3>
     <h3><a href="/favorite">Favorite Food</a></h3>
     <br>
     <br>
@@ -57,8 +56,7 @@
     *result.html*
     ```
     <h1>result of addition : {{ message }}</h1>
-	<h2><a href = "/">go back to home page</a></h2>
-	<h2><a href = "/list">See Food List</a></h2>
+	<h2><a href = "/">Home</a></h2>
     ```
 
 3. Initialize your database.  Create a file called `initdb.py`.  Copy the contents shown below into `initdb.py`.  Run `initdb.py` with this command: `Python initdb.py`.  After running this script a file called `database.db` is created.  This is your `SQLite3` database.  `SQLite3` reads and writes to a single static file without needing a separate database server running locally.
@@ -85,7 +83,6 @@
        --templates/
        ---- home.html
        ---- food.html
-       ---- list.html
        ---- result.html
        --venv/
     ```
@@ -94,9 +91,6 @@
 
 
 6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.
-
-
-7. Implement the `/list` route.  `SELECT` everything from the `foods` table and return it to the client.  Make sure you set `connection.row_factory` to `sqlite3.Row`.  Make sure that you pass the data to the template when rendering ( `return render_template('list.html', rows = rows)` ).  Use the lecture code as a reference.
 
 
 ---
