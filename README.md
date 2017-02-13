@@ -101,26 +101,73 @@
     connection.close()
 	```
 
-4. Create your server file, import the needed dependencies, and create the home route (`/`).  This route should render the `home.html` template.  Start your server and go to `localhost:5000/`.
-
-Your file structure should now look like this:
-```
- project-name/
- --server.py (or whatever you named your python script)
- --initdb.py
- --database.db
- --templates/
- ---- home.html
- ---- food.html
- ---- list.html
- ---- result.html
- --venv/
-```
+4. Create your server file, import the needed dependencies, and create the home route (`/`).  This route should render the `home.html` template.  Start your server and go to `localhost:5000/`. Your file structure should now look like this:
+    ```
+       project-name/
+       --server.py (or whatever you named your python script)
+       --initdb.py
+       --database.db
+       --templates/
+       ---- home.html
+       ---- food.html
+       ---- list.html
+       ---- result.html
+       --venv/
+    ```
     
 5. Implement the `/enternew` route.  This route should simply render `food.html`.
 
 
 6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.
-	
 
-7. Implement
+
+7. Implement the '/list' route.  
+
+    
+Paste this HTML into `home.html`.
+
+```
+<!DOCTYPE html>
+<html>
+  <body>
+    <img src="https://lambdaschool.com/static/assets/images/lambda.png">
+    <h1>Congrats!</h1>
+    <h3>You just served your first webpage.</h3>
+    <p>This page is pretty bare right now but these are the fundamentals that all websites are built on.  Later in the course we will teach you some basic HTML, CSS, and Javascript so that you can structure more sophisticated pages with more detailed designs and complex functionality</p>
+    <p>Our full time and part time courses will go much more in depth as to what it takes to build the same kinds of web applications that you know and love.  We will be covering the cutting edge frameworks used by industry leaders to create highly performant and beautiful applications.</p>
+  </body>
+</html>
+```
+---
+
+### Extra Credit
+
+1. Create a route called `/add` that adds two parameteres together and returns them.
+	* `localhost:5000/add/5/10` would return `'15'`
+	* You will need to convert the parameters to integers using `int()`
+	* Example: `fiveAsInt = int('5')` => `fiveAsInt == 5`
+	* You then have to convert the `int` back into a `string` using `str()`
+	* Example: `fiveAsString = str(5)` => `fiveAsString == '5'`
+	* You can also prefix the parameter with the keyword `int` => `<int:param>`. Make sure you turn it back into a `string`
+
+2. Create a route called `/multiply` and a route called `/subtract` 
+	* `localhost:5000/multiply/6/5` would return `'30'`
+	* `localhost:5000/subtract/25/5` would return `'20'`
+	* Make sure you are converting the parameters to `int`s and returning a `string`
+
+3. Create a route called `/favoritefoods` that returns a `list` of your favorite foods
+	* A `list` is a collection of different values. => `['football', 'basketball', 'rugby']`
+	* The server must return a string so we need to convert our list into a string.
+	* One common string format for sending complex data is `JSON`.
+	* Change the top line of your server file to `from flask import Flask, render_template, jsonify`
+	* Pass your `list` to `jsonify()` when returning it. `return jsonify(myList)`
+
+---
+#### Congratulations on finishing Homework #2
+Apply to our full time or part time immersive program to learn cutting edge technologies that are used by top technology companies around the world.
+
+Our part time and full time courses are 13 intense weeks of focused study on the most relevant technologies.  
+
+Class sizes are small to ensure that each student gets individual attention from our world class instructors to help them succeed.
+
+For more information visit: https://lambdaschool.com
