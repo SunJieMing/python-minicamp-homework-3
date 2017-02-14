@@ -90,7 +90,7 @@
 5. Implement the `/enternew` route.  This route should simply render `food.html`.
 
 
-6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.
+6. Implement the `/addfood` route.  This route should accept a `POST` request.  This route should accept the form data sent from the `food.html` template and `INSERT` it into the database.  Use the lecture code as a reference.  Verify that you are correctly inserting the data into the database by uploading your `database.db` file to http://inloop.github.io/sqlite-viewer/.
 
 
 ---
