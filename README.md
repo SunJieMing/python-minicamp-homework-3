@@ -10,11 +10,6 @@
     ```
     <img src="https://lambdaschool.com/static/assets/images/lambda.png">
     <h1>Food Database</h1>
-    <form action="{{ url_for('search') }}" method="GET">
-        <h3>Search</h3>
-        <input type="text" name="name" />
-        <input type="submit" />
-    </form>
     <h3><a href="/enternew">Add Food</a></h3>
     <h3><a href="/favorite">Favorite Food</a></h3>
     <br>
