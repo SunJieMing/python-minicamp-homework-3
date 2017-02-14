@@ -31,7 +31,7 @@
     ```
     *food.html*
     ```
-    <form action = "{{ url_for('addrecord') }}" method = "POST">
+    <form action = "{{ url_for('addfood') }}" method = "POST">
       <h3>Food Info</h3>
       Name<br>
       <input type = "text" name = "name" /></br>
